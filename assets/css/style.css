@@ -1,0 +1,330 @@
+/* === Single-column, scrollable personal site === */
+
+/* === CSS Variables === */
+:root {
+  --navy:           #f7f8fa;  /* page background */
+  --light-navy:     #ffffff;  /* card / surface */
+  --lightest-navy:  #e2e8ef;  /* borders & dividers */
+  --slate:          #52606d;  /* secondary / body text */
+  --light-slate:    #3e4c59;  /* stronger secondary */
+  --lightest-slate: #27333f;  /* titles */
+  --white:          #1f2933;  /* strongest headings */
+  --green:          #3b82c4;  /* accent */
+  --green-tint:     rgba(59, 130, 196, 0.12);
+  --transition:     all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+::selection {
+  background-color: rgba(59, 130, 196, 0.22);
+  color: #1f2933;
+}
+
+/* === Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--navy);
+  color: var(--slate);
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* === Page Layout === */
+.layout {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+}
+
+/* === Intro === */
+.intro {
+  margin-bottom: 4rem;
+}
+
+/* Greeting and portrait side by side, portrait flush right. */
+.intro-head {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.site-name {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+.intro p:last-of-type {
+  margin-bottom: 0;
+}
+
+.intro a {
+  border-bottom: 1px solid var(--green-tint);
+}
+
+.intro a:hover {
+  border-bottom-color: var(--green);
+}
+
+/* === Inline link row (GitHub, email, …) === */
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.link-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--light-slate);
+}
+
+.link-row a:hover {
+  color: var(--green);
+}
+
+.link-row svg {
+  flex-shrink: 0;
+}
+
+/* === Sections === */
+section {
+  margin-bottom: 4rem;
+  scroll-margin-top: 3rem;
+}
+
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--slate);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::after {
+  content: '';
+  display: block;
+  flex: 1;
+  height: 1px;
+  background-color: var(--lightest-navy);
+}
+
+/* === Project entries === */
+.project-card {
+  display: block;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  margin: 0 -1.25rem 0.5rem -1.5rem;
+  border-radius: 4px;
+  scroll-margin-top: 3rem;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  background: var(--light-navy);
+  transform: translateX(6px);
+  box-shadow: inset 2px 0 0 var(--green), 0 6px 24px rgba(31, 41, 51, 0.06);
+}
+
+.project-title {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--lightest-slate);
+  line-height: 1.4;
+}
+
+.project-context {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--light-slate);
+  margin-bottom: 0.6rem;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--slate);
+  margin-bottom: 0.75rem;
+}
+
+.project-desc:last-child {
+  margin-bottom: 0;
+}
+
+.project-desc a {
+  border-bottom: 1px solid transparent;
+}
+
+.project-desc a:hover {
+  border-bottom-color: var(--green);
+}
+
+/* Placeholder line for content still to be written. */
+.project-todo {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--slate);
+  opacity: 0.85;
+  margin-bottom: 0.75rem;
+}
+
+/* === Tech tags === */
+.project-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-tags li {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--light-slate);
+  background: var(--lightest-navy);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+}
+
+/* === Project links === */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 3px;
+}
+
+.project-link:hover {
+  background: var(--green-tint);
+}
+
+/* === Upcoming / placeholder entry === */
+.project-card--upcoming {
+  border: 1px dashed var(--lightest-navy);
+}
+
+.project-card--upcoming:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.project-card--upcoming .project-title {
+  color: var(--slate);
+}
+
+/* === Footer === */
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightest-navy);
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
+.site-footer a {
+  color: var(--slate);
+}
+
+.site-footer a:hover {
+  color: var(--green);
+}
+
+/* === Mobile === */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .layout {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .site-name {
+    font-size: 1.85rem;
+  }
+
+  /* Stack on narrow screens: portrait above the greeting. */
+  .intro-head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .avatar {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .project-card {
+    padding: 1rem 1rem 1rem 1.15rem;
+    margin-left: -1.15rem;
+    margin-right: -1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}

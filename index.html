@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leon Beccard</title>
+  <meta name="description" content="Leon Beccard — machine learning and data science in Vienna. Work on retrieval-augmented generation, LLM reliability and the infrastructure around them.">
+  <link rel="canonical" href="https://lebe1.github.io/">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="preload" href="/assets/fonts/fraunces-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <header class="intro">
+      <div class="intro-head">
+        <h1 class="site-name">Hi, I'm Leon.</h1>
+        <img class="avatar" src="/images/avatar.jpg" alt="Portrait of Leon Beccard" width="300" height="300">
+      </div>
+      <p>My full name is Leon Beccard and I recently finished a master's in Data Science at TU Wien here in Vienna. My thesis went after hallucinations at the point where they appear, inside the decoding loop. A fine-tuned detector called LettucePrevent scores every candidate token as it is generated, so unsupported ones are penalised before they are ever sampled.</p>
+      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Everything below is public and the code is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
+
+      <div class="link-row">
+        <a href="https://github.com/lebe1" rel="me noopener" target="_blank">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://huggingface.co/lebe1" rel="me noopener" target="_blank">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 1.8a8.2 8.2 0 1 1 0 16.4 8.2 8.2 0 0 1 0-16.4Zm-3.3 5a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Zm6.6 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6ZM7.2 13.3a.85.85 0 0 0-.85.9c.13 2.5 2.44 4.4 5.65 4.4s5.52-1.9 5.65-4.4a.85.85 0 0 0-1.7-.1c-.09 1.5-1.66 2.8-3.95 2.8s-3.86-1.3-3.95-2.8a.85.85 0 0 0-.85-.8Z"/>
+          </svg>
+          Hugging Face
+        </a>
+        <a href="https://repositum.tuwien.at/handle/20.500.12708/229242" rel="noopener" target="_blank">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4.5h6a2.5 2.5 0 0 1 2 1 2.5 2.5 0 0 1 2-1h6v14h-6a2.5 2.5 0 0 0-2 1 2.5 2.5 0 0 0-2-1H4Z"/>
+            <path d="M12 5.5v14"/>
+          </svg>
+          Thesis
+        </a>
+        <a href="https://www.linkedin.com/in/leon-beccard/" rel="me noopener" target="_blank">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm6.5 0h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.3c0-1.3-.02-2.9-1.8-2.9-1.8 0-2.08 1.36-2.08 2.8V21h-4V9Z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <main>
+
+      <section id="projects">
+        <h2 class="section-label">Projects</h2>
+
+        <article class="project-card">
+          <span class="project-title">LettucePrevent</span>
+          <span class="project-context">Master's thesis · TU Wien</span>
+          <p class="project-desc">TODO</p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>Transformers</li>
+            <li>RAG</li>
+            <li>LLM evaluation</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/LettucePrevent" rel="noopener" target="_blank">GitHub</a>
+            <a class="project-link" href="https://huggingface.co/lebe1/lettuceprevent-ettin-decoder-68m-en" rel="noopener" target="_blank">Model</a>
+            <a class="project-link" href="https://repositum.tuwien.at/handle/20.500.12708/229242" rel="noopener" target="_blank">Thesis</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">Simple Scientific RAG</span>
+          <span class="project-context">Retrieval over a legal corpus</span>
+          <p class="project-desc">TODO</p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>Docker</li>
+            <li>Vector search</li>
+            <li>RAG</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/simple-scientific-RAG" rel="noopener" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">Kubernetes on Google Cloud</span>
+          <span class="project-context">Cloud Computing lab project</span>
+          <p class="project-desc">TODO</p>
+          <ul class="project-tags">
+            <li>Kubernetes</li>
+            <li>Terraform</li>
+            <li>Google Cloud</li>
+            <li>Bash</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/Kubernetes-project" rel="noopener" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">NGS</span>
+          <span class="project-context">Next Generation Software Development</span>
+          <p class="project-todo">Short description still to be written — what NGS does and what you contributed.</p>
+          <ul class="project-tags">
+            <li>JavaScript</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/NGS" rel="noopener" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">Climate Change AI</span>
+          <span class="project-context">Applied machine learning</span>
+          <p class="project-todo">Short description still to be written — which dataset, which models, what came out of it.</p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>Jupyter</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/ClimateChangeAI" rel="noopener" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">Text-Oriented Data Science</span>
+          <span class="project-context">NLP coursework project</span>
+          <p class="project-todo">Short description still to be written — the task, the corpus, the result.</p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>Jupyter</li>
+            <li>NLP</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/text-oriented-data-science-project" rel="noopener" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card project-card--upcoming">
+          <span class="project-title">More on the way</span>
+          <p class="project-desc">Currently writing up the next one. Everything else lives on <a href="https://github.com/lebe1?tab=repositories" rel="noopener" target="_blank">GitHub</a>.</p>
+        </article>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-label">Get in touch</h2>
+        <p class="project-desc">Happy to receive any requests via <a href="https://www.linkedin.com/in/leon-beccard/" rel="noopener" target="_blank">LinkedIn</a>.</p>
+      </section>
+
+    </main>
+
+  </div>
+</body>
+</html>
