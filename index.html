@@ -20,8 +20,8 @@
         <h1 class="site-name">Hi, I'm Leon.</h1>
         <img class="avatar" src="/images/avatar.jpg" alt="Portrait of Leon Beccard" width="300" height="300">
       </div>
-      <p>My full name is Leon Beccard and I recently finished a master's in Data Science at TU Wien here in Vienna. My thesis went after hallucinations at the point where they appear, inside the decoding loop. A fine-tuned detector called LettucePrevent scores every candidate token as it is generated, so unsupported ones are penalised before they are ever sampled.</p>
-      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Everything below is public and the code is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
+      <p>My full name is Leon Beccard and I recently finished my Master of Science in Data Science at TU Wien in Vienna. My thesis tried to eliminate hallucinations at the point where they appear, so they won't be generated. A fine-tuned detector called LettucePrevent scores every candidate token as it is generated, so unsupported ones are penalised before they are ever sampled.</p>
+      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Before my master, I was working as a software engineer and a project manager for two years in between my studies. Everything below is public and the code is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
 
       <div class="link-row">
         <a href="https://github.com/lebe1" rel="me noopener" target="_blank">
@@ -54,13 +54,43 @@
 
     <main>
 
+      <section id="categories" class="category-section">
+        <h2 class="section-label">Explore by category</h2>
+        <div class="category-grid">
+          <a class="category-card" href="#projects">
+            <span class="category-card__eyebrow">Featured</span>
+            <h3 class="category-card__title">Favourite projects</h3>
+            <p class="category-card__description">A curated selection of the work I am most proud of.</p>
+            <span class="category-card__link">View projects</span>
+          </a>
+          <a class="category-card" href="/data-science/">
+            <span class="category-card__eyebrow">Research</span>
+            <h3 class="category-card__title">Data science projects</h3>
+            <p class="category-card__description">Applied machine learning, NLP, retrieval and evaluation work.</p>
+            <span class="category-card__link">Open section</span>
+          </a>
+          <a class="category-card" href="/professional-open-source/">
+            <span class="category-card__eyebrow">Engineering</span>
+            <h3 class="category-card__title">Professional open-source projects</h3>
+            <p class="category-card__description">Software engineering and infrastructure work shared in public.</p>
+            <span class="category-card__link">Open section</span>
+          </a>
+          <a class="category-card" href="/fun-projects/">
+            <span class="category-card__eyebrow">Playful</span>
+            <h3 class="category-card__title">Fun projects</h3>
+            <p class="category-card__description">Smaller experiments, prototypes and personal side projects.</p>
+            <span class="category-card__link">Open section</span>
+          </a>
+        </div>
+      </section>
+
       <section id="projects">
-        <h2 class="section-label">Projects</h2>
+        <h2 class="section-label">Favourite projects</h2>
 
         <article class="project-card">
           <span class="project-title">LettucePrevent</span>
           <span class="project-context">Master's thesis · TU Wien</span>
-          <p class="project-desc">TODO</p>
+          <p class="project-desc">LettucePrevent is a real-time hallucination detector that sits inside the autoregressive decoding loop and penalises unsupported tokens before they are sampled. The approach is designed for retrieval-augmented generation, where grounding context can be used to reject unsupported claims as they appear. The number detector performs especially well and reduces numeric hallucinations substantially with limited overhead. The factual detector is more experimental and depends strongly on tokenizer alignment and latency trade-offs. Overall, the work shows a promising route towards more reliable language generation, but it still has clear limitations.</p>
           <ul class="project-tags">
             <li>Python</li>
             <li>PyTorch</li>
@@ -69,6 +99,7 @@
             <li>LLM evaluation</li>
           </ul>
           <div class="project-links">
+            <a class="project-link" href="https://huggingface.co/blog/lebe1/lettuceprevent-blogpost" rel="noopener" target="_blank">Blog post</a>
             <a class="project-link" href="https://github.com/lebe1/LettucePrevent" rel="noopener" target="_blank">GitHub</a>
             <a class="project-link" href="https://huggingface.co/lebe1/lettuceprevent-ettin-decoder-68m-en" rel="noopener" target="_blank">Model</a>
             <a class="project-link" href="https://repositum.tuwien.at/handle/20.500.12708/229242" rel="noopener" target="_blank">Thesis</a>
@@ -76,78 +107,32 @@
         </article>
 
         <article class="project-card">
-          <span class="project-title">Simple Scientific RAG</span>
-          <span class="project-context">Retrieval over a legal corpus</span>
-          <p class="project-desc">TODO</p>
+          <span class="project-title">Augustina</span>
+          <span class="project-context">Digitalising street newspaper sales · Convive</span>
+          <p class="project-desc">This was one of the most meaningful projects I helped turn from a hackathon idea into a funded product. We digitalised how street newspapers were sold by enabling vendors to accept digital payments through QR codes, removing the need for a bank account or a mobile phone. I led the project as a project manager and built the backend architecture by implementing the REST API and the security layer for the payments. The project combined product thinking, systems design and practical delivery in a way that had a real public impact.</p>
           <ul class="project-tags">
-            <li>Python</li>
-            <li>Docker</li>
-            <li>Vector search</li>
-            <li>RAG</li>
+            <li>Go</li>
+            <li>REST APIs</li>
+            <li>SQL</li>
+            <li>Vue.js</li>
+            <li>Payments</li>
           </ul>
           <div class="project-links">
-            <a class="project-link" href="https://github.com/lebe1/simple-scientific-RAG" rel="noopener" target="_blank">GitHub</a>
+            <a class="project-link" href="https://github.com/augustin-wien/augustina-backend" rel="noopener" target="_blank">GitHub Backend Repository</a>
+            <a class="project-link" href="https://github.com/augustin-wien/augustina-frontend" rel="noopener" target="_blank">GitHub Frontend Repository</a>
           </div>
         </article>
 
         <article class="project-card">
-          <span class="project-title">Kubernetes on Google Cloud</span>
-          <span class="project-context">Cloud Computing lab project</span>
-          <p class="project-desc">TODO</p>
-          <ul class="project-tags">
-            <li>Kubernetes</li>
-            <li>Terraform</li>
-            <li>Google Cloud</li>
-            <li>Bash</li>
-          </ul>
+          <span class="project-title">Street dinners</span>
+          <span class="project-context">Organising dinners for a more vibrant neighbourhood · Vienna</span>
+          <p class="project-desc">This is one of my favourite personal projects because it started as a simple idea and grew into a small civic movement. We began by inviting neighbours to share dinner on the street and quickly realised that the experience could strengthen community life in a very tangible way. From that idea, a petition was launched to close a short stretch of road to cars, gathering more than 500 signatures and creating momentum around a safer, more welcoming public space. The outcome of the petition is still open. The project continues to bring people together and might even lead to a community yard at the very same place.</p>
           <div class="project-links">
-            <a class="project-link" href="https://github.com/lebe1/Kubernetes-project" rel="noopener" target="_blank">GitHub</a>
+            <a class="project-link" href="https://petitionen.wien.gv.at/petition/online/PetitionDetail.aspx?PetID=0577fece7ab44c6b9798eee372005eda" rel="noopener" target="_blank">Petition</a>
           </div>
         </article>
 
-        <article class="project-card">
-          <span class="project-title">NGS</span>
-          <span class="project-context">Next Generation Software Development</span>
-          <p class="project-todo">Short description still to be written — what NGS does and what you contributed.</p>
-          <ul class="project-tags">
-            <li>JavaScript</li>
-          </ul>
-          <div class="project-links">
-            <a class="project-link" href="https://github.com/lebe1/NGS" rel="noopener" target="_blank">GitHub</a>
-          </div>
-        </article>
 
-        <article class="project-card">
-          <span class="project-title">Climate Change AI</span>
-          <span class="project-context">Applied machine learning</span>
-          <p class="project-todo">Short description still to be written — which dataset, which models, what came out of it.</p>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>Jupyter</li>
-          </ul>
-          <div class="project-links">
-            <a class="project-link" href="https://github.com/lebe1/ClimateChangeAI" rel="noopener" target="_blank">GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-title">Text-Oriented Data Science</span>
-          <span class="project-context">NLP coursework project</span>
-          <p class="project-todo">Short description still to be written — the task, the corpus, the result.</p>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>Jupyter</li>
-            <li>NLP</li>
-          </ul>
-          <div class="project-links">
-            <a class="project-link" href="https://github.com/lebe1/text-oriented-data-science-project" rel="noopener" target="_blank">GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card project-card--upcoming">
-          <span class="project-title">More on the way</span>
-          <p class="project-desc">Currently writing up the next one. Everything else lives on <a href="https://github.com/lebe1?tab=repositories" rel="noopener" target="_blank">GitHub</a>.</p>
-        </article>
       </section>
 
       <section id="contact">
