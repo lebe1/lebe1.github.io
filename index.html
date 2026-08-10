@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Leon Beccard</title>
-  <meta name="description" content="Leon Beccard — machine learning and data science in Vienna. Work on retrieval-augmented generation, LLM reliability and the infrastructure around them.">
+  <meta name="description" content="Leon Beccard — machine learning and data science in Vienna. Working in the whole field of LLM generation including retrieval-augmented generation, NLP and the infrastructure around them.">
   <link rel="canonical" href="https://lebe1.github.io/">
-  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="icon" href="/images/profile_picture/favicon.png" type="image/png">
   <link rel="preload" href="/assets/fonts/fraunces-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/fonts.css">
@@ -18,11 +18,13 @@
     <header class="intro">
       <div class="intro-head">
         <h1 class="site-name">Hi, I'm Leon.</h1>
-        <img class="avatar" src="/images/avatar.jpg" alt="Portrait of Leon Beccard" width="300" height="300">
+        <div class="avatar-block">
+          <img class="avatar" src="/images/profile_picture/avatar.jpg" alt="Portrait of Leon Beccard" width="300" height="300">
+          <p class="photo-credit">Foto: (c) Claudia Poppe</p>
+        </div>
       </div>
-      <p>My full name is Leon Beccard and I recently finished my Master of Science in Data Science at TU Wien in Vienna. My thesis tried to eliminate hallucinations at the point where they appear, so they won't be generated. A fine-tuned detector called LettucePrevent scores every candidate token as it is generated, so unsupported ones are penalised before they are ever sampled.</p>
+      <p>My full name is Leon Beccard and this is my current portfolio of open-source projects. I recently finished my Master of Science in Data Science at TU Wien in Vienna. My thesis focused on reducing hallucinations at the moment they emerge during generation. A fine-tuned detector called LettucePrevent scores each candidate token as it is produced, penalising unsupported outputs before they are ever sampled.</p>
       <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Before my master, I was working as a software engineer and a project manager for two years in between my studies. Everything below is public and the code is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
-
       <div class="link-row">
         <a href="https://github.com/lebe1" rel="me noopener" target="_blank">
           <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -60,7 +62,7 @@
           <a class="category-card" href="#projects">
             <span class="category-card__eyebrow">Featured</span>
             <h3 class="category-card__title">Favourite projects</h3>
-            <p class="category-card__description">A curated selection of the work I am most proud of.</p>
+            <p class="category-card__description">A curated selection of my work.</p>
             <span class="category-card__link">View projects</span>
           </a>
           <a class="category-card" href="/data-science/">
@@ -90,6 +92,7 @@
         <article class="project-card">
           <span class="project-title">LettucePrevent</span>
           <span class="project-context">Master's thesis · TU Wien</span>
+          <img class="project-image" src="/images/favourite_projects/LettucePrevent.png" alt="LettucePrevent project illustration" loading="lazy">
           <p class="project-desc">LettucePrevent is a real-time hallucination detector that sits inside the autoregressive decoding loop and penalises unsupported tokens before they are sampled. The approach is designed for retrieval-augmented generation, where grounding context can be used to reject unsupported claims as they appear. The number detector performs especially well and reduces numeric hallucinations substantially with limited overhead. The factual detector is more experimental and depends strongly on tokenizer alignment and latency trade-offs. Overall, the work shows a promising route towards more reliable language generation, but it still has clear limitations.</p>
           <ul class="project-tags">
             <li>Python</li>
@@ -109,6 +112,7 @@
         <article class="project-card">
           <span class="project-title">Augustina</span>
           <span class="project-context">Digitalising street newspaper sales · Convive</span>
+          <img class="project-image" src="/images/favourite_projects/Augustin_bargeldlos.jpg" alt="Augustina project illustration" loading="lazy">
           <p class="project-desc">This was one of the most meaningful projects I helped turn from a hackathon idea into a funded product. We digitalised how street newspapers were sold by enabling vendors to accept digital payments through QR codes, removing the need for a bank account or a mobile phone. I led the project as a project manager and built the backend architecture by implementing the REST API and the security layer for the payments. The project combined product thinking, systems design and practical delivery in a way that had a real public impact.</p>
           <ul class="project-tags">
             <li>Go</li>
@@ -121,11 +125,28 @@
             <a class="project-link" href="https://github.com/augustin-wien/augustina-backend" rel="noopener" target="_blank">GitHub Backend Repository</a>
             <a class="project-link" href="https://github.com/augustin-wien/augustina-frontend" rel="noopener" target="_blank">GitHub Frontend Repository</a>
           </div>
+          <div class="project-press">
+            <h4 class="project-press__title">Incomplete press review</h4>
+            <ul class="press-list">
+              <a class="project-link" href="https://augustin.or.at/mit-bargeld-oder-karte/" rel="noopener" target="_blank">Augustin</a>
+              <a class="project-link" href="https://www.derstandard.at/story/3000000189654/augustin-wu-die-polizei-schikaniert-die-verkaeufer" rel="noopener" target="_blank">Der Standard</a> 
+              <a class="project-link" href="https://wien.orf.at/stories/3203484/" rel="noopener" target="_blank">ORF Wien</a> 
+              <a class="project-link" href="https://www.ndr.de/nachrichten/hamburg/Strassenmagazin-HinzKunzt-nun-auch-bargeldlos-erhaeltlich,hinzundkuntzdigital102.html" rel="noopener" target="_blank">NDR</a> 
+              <a class="project-link" href="https://taz.de/Strassenzeitung-ermoeglicht-Handyzahlung/!6071944/" rel="noopener" target="_blank">taz</a>
+              <a class="project-link" href="https://www.zeit.de/news/2025-05/18/bargeldloses-zahlen-fuer-strassenmagazin-kommt-gut-an" rel="noopener" target="_blank">Die Zeit</a>
+              <a class="project-link" href="https://www.zdfheute.de/panorama/obdachlos-strassenzeitung-bargeldlos-100.html" rel="noopener" target="_blank">ZDF</a> 
+              <a class="project-link" href="https://20er.at/kein-bargeld-kein-problem/" rel="noopener" target="_blank">20er</a>
+              <a class="project-link" href="https://www.tt.com/artikel/30897323/tiroler-strassenzeitung-20er-kann-nun-auch-bargeldlos-gekauft-werden" rel="noopener" target="_blank">Tiroler Tageszeitung</a> 
+              <a class="project-link" href="https://www.nachrichten.at/oberoesterreich/uebers-handy-die-kupfermuckn-bald-bargeldlos-zu-kaufen;art4,3989029" rel="noopener" target="_blank">Nachrichten.at</a> 
+              <a class="project-link" href="https://volksblatt.at/chronik/regionales/strassenzeitung-kupfermuckn-kann-auch-bargeldlos-gekauft-werden-1562113/" rel="noopener" target="_blank">Volksblatt</a> 
+            </ul>
+          </div>
         </article>
 
         <article class="project-card">
           <span class="project-title">Street dinners</span>
           <span class="project-context">Organising dinners for a more vibrant neighbourhood · Vienna</span>
+          <img class="project-image" src="/images/favourite_projects/Straßenfest.jpeg" alt="Street dinners project illustration" loading="lazy">
           <p class="project-desc">This is one of my favourite personal projects because it started as a simple idea and grew into a small civic movement. We began by inviting neighbours to share dinner on the street and quickly realised that the experience could strengthen community life in a very tangible way. From that idea, a petition was launched to close a short stretch of road to cars, gathering more than 500 signatures and creating momentum around a safer, more welcoming public space. The outcome of the petition is still open. The project continues to bring people together and might even lead to a community yard at the very same place.</p>
           <div class="project-links">
             <a class="project-link" href="https://petitionen.wien.gv.at/petition/online/PetitionDetail.aspx?PetID=0577fece7ab44c6b9798eee372005eda" rel="noopener" target="_blank">Petition</a>

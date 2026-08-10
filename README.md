@@ -12,12 +12,7 @@ repository is exactly what gets served.
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. Paths are root-relative (`/assets/css/style.css`), and
-because this is a *user* site served from the domain root rather than a project site under
-a subpath, they resolve identically on localhost and on the live domain.
-
-Don't open `index.html` as a `file://` URL — fonts and root-relative paths behave
-differently under that scheme, so the page can look broken even when it's fine.
+Then open <http://localhost:8000> 
 
 ## Editing
 
