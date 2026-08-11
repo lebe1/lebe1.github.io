@@ -1,22 +1,42 @@
 /* === Single-column, scrollable personal site === */
 
-/* === CSS Variables === */
+/* === CSS Variables ===
+   Named by role, not by colour, so the dark palette below can swap the values
+   without any rule needing to know which theme is active. */
 :root {
-  --navy:           #f7f8fa;  /* page background */
-  --light-navy:     #ffffff;  /* card / surface */
-  --lightest-navy:  #e2e8ef;  /* borders & dividers */
-  --slate:          #52606d;  /* secondary / body text */
-  --light-slate:    #3e4c59;  /* stronger secondary */
-  --lightest-slate: #27333f;  /* titles */
-  --white:          #1f2933;  /* strongest headings */
-  --green:          #3b82c4;  /* accent */
-  --green-tint:     rgba(59, 130, 196, 0.12);
-  --transition:     all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --bg:           #f7f8fa;  /* page background */
+  --surface:      #ffffff;  /* card / hovered surface */
+  --border:       #e2e8ef;  /* borders, dividers, tag chips */
+  --text:         #52606d;  /* body text */
+  --text-strong:  #3e4c59;  /* stronger secondary text */
+  --title:        #27333f;  /* project titles */
+  --heading:      #1f2933;  /* page heading */
+  --accent:       #2c6399;  /* links and buttons */
+  --accent-tint:  rgba(44, 99, 153, 0.12);
+  --selection:    rgba(44, 99, 153, 0.22);
+  --shadow:       0 6px 24px rgba(31, 41, 51, 0.06);
+  --transition:   all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #11171e;
+    --surface:     #1a222b;
+    --border:      #2b3641;
+    --text:        #a3b1bf;
+    --text-strong: #c1ccd8;
+    --title:       #dde5ec;
+    --heading:     #eef3f7;
+    --accent:      #7db6ea;
+    --accent-tint: rgba(125, 182, 234, 0.16);
+    --selection:   rgba(125, 182, 234, 0.28);
+    --shadow:      0 6px 24px rgba(0, 0, 0, 0.4);
+  }
 }
 
 ::selection {
-  background-color: rgba(59, 130, 196, 0.22);
-  color: #1f2933;
+  background-color: var(--selection);
+  color: var(--heading);
 }
 
 /* === Reset & Base === */
@@ -32,8 +52,8 @@ html {
 
 body {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-color: var(--navy);
-  color: var(--slate);
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.7;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
@@ -41,9 +61,16 @@ body {
 }
 
 a {
-  color: var(--green);
+  color: var(--accent);
   text-decoration: none;
   transition: var(--transition);
+}
+
+/* Visible keyboard focus everywhere; mouse clicks stay unchanged. */
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* === Page Layout === */
@@ -84,8 +111,14 @@ a {
 
 .photo-credit {
   font-size: 0.78rem;
-  color: var(--slate);
+  color: var(--text);
   opacity: 0.85;
+}
+
+/* Credit line under a project image, following the centred image above it. */
+.project-image + .photo-credit {
+  text-align: center;
+  margin: -0.6rem 0 0.9rem;
 }
 
 .site-name {
@@ -94,7 +127,7 @@ a {
   font-family: 'Fraunces', Georgia, serif;
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--heading);
   letter-spacing: -0.02em;
   line-height: 1.15;
 }
@@ -108,11 +141,11 @@ a {
 }
 
 .intro a {
-  border-bottom: 1px solid var(--green-tint);
+  border-bottom: 1px solid var(--accent-tint);
 }
 
 .intro a:hover {
-  border-bottom-color: var(--green);
+  border-bottom-color: var(--accent);
 }
 
 /* === Inline link row (GitHub, email, …) === */
@@ -129,11 +162,11 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--light-slate);
+  color: var(--text-strong);
 }
 
 .link-row a:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 
 .link-row svg {
@@ -146,71 +179,12 @@ section {
   scroll-margin-top: 3rem;
 }
 
-.category-section {
-  margin-bottom: 3rem;
-}
-
-.category-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.category-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.1rem 1.2rem;
-  border: 1px solid var(--lightest-navy);
-  border-radius: 8px;
-  background: var(--light-navy);
-  box-shadow: 0 6px 24px rgba(31, 41, 51, 0.04);
-  transition: var(--transition);
-}
-
-.category-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--green);
-  box-shadow: 0 12px 28px rgba(31, 41, 51, 0.08);
-}
-
-.category-card__eyebrow {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--green);
-}
-
-.category-card__title {
-  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  color: var(--lightest-slate);
-}
-
-.category-card__description {
-  font-size: 0.95rem;
-  color: var(--slate);
-}
-
-.category-card__link {
-  margin-top: auto;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green);
-}
-
 .section-label {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--slate);
+  color: var(--text);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -222,7 +196,22 @@ section {
   display: block;
   flex: 1;
   height: 1px;
-  background-color: var(--lightest-navy);
+  background-color: var(--border);
+}
+
+/* Short note between a section heading and its entries. */
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: -0.75rem 0 1.75rem;
+}
+
+.section-intro a {
+  border-bottom: 1px solid transparent;
+}
+
+.section-intro a:hover {
+  border-bottom-color: var(--accent);
 }
 
 /* === Project entries === */
@@ -236,9 +225,9 @@ section {
 }
 
 .project-card:hover {
-  background: var(--light-navy);
+  background: var(--surface);
   transform: translateX(6px);
-  box-shadow: inset 2px 0 0 var(--green), 0 6px 24px rgba(31, 41, 51, 0.06);
+  box-shadow: inset 2px 0 0 var(--accent), var(--shadow);
 }
 
 .project-title {
@@ -246,31 +235,38 @@ section {
   font-family: 'Fraunces', Georgia, serif;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--lightest-slate);
+  color: var(--title);
   line-height: 1.4;
 }
 
 .project-context {
   display: block;
   font-size: 0.85rem;
-  color: var(--light-slate);
+  color: var(--text-strong);
   margin-bottom: 0.6rem;
 }
 
 .project-image {
   display: block;
   width: 100%;
-  max-width: 380px;      
+  max-width: 380px;
   height: auto;
-  margin: 1rem auto;     
+  margin: 1rem auto;
   object-fit: cover;
   border-radius: 6px;
 }
 
+/* On a dark page the images are the only bright surfaces, so give them an
+   edge instead of letting them float. */
+@media (prefers-color-scheme: dark) {
+  .project-image {
+    border: 1px solid var(--border);
+  }
+}
 
 .project-desc {
   font-size: 0.95rem;
-  color: var(--slate);
+  color: var(--text);
   margin-bottom: 0.75rem;
 }
 
@@ -283,14 +279,14 @@ section {
 }
 
 .project-desc a:hover {
-  border-bottom-color: var(--green);
+  border-bottom-color: var(--accent);
 }
 
 /* Placeholder line for content still to be written. */
 .project-todo {
   font-size: 0.95rem;
   font-style: italic;
-  color: var(--slate);
+  color: var(--text);
   opacity: 0.85;
   margin-bottom: 0.75rem;
 }
@@ -308,8 +304,8 @@ section {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: var(--light-slate);
-  background: var(--lightest-navy);
+  color: var(--text-strong);
+  background: var(--border);
   border-radius: 3px;
   padding: 0.2rem 0.55rem;
 }
@@ -328,45 +324,51 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--green);
-  border: 1px solid var(--green);
+  color: var(--accent);
+  border: 1px solid var(--accent);
   border-radius: 3px;
 }
 
 .project-link:hover {
-  background: var(--green-tint);
+  background: var(--accent-tint);
 }
 
-/* === Upcoming / placeholder entry === */
-.project-card--upcoming {
-  border: 1px dashed var(--lightest-navy);
+/* === Press coverage inside a project card === */
+.project-press {
+  margin-top: 1.25rem;
 }
 
-.project-card--upcoming:hover {
-  transform: none;
-  box-shadow: none;
-  background: transparent;
+.project-press__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.6rem;
 }
 
-.project-card--upcoming .project-title {
-  color: var(--slate);
+.press-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 /* === Footer === */
 .site-footer {
   margin-top: 4rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--lightest-navy);
+  border-top: 1px solid var(--border);
   font-size: 0.8rem;
-  color: var(--slate);
+  color: var(--text);
 }
 
 .site-footer a {
-  color: var(--slate);
+  color: var(--text);
+  border-bottom: 1px solid transparent;
 }
 
 .site-footer a:hover {
-  color: var(--green);
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* === Mobile === */
@@ -400,10 +402,6 @@ section {
     padding: 1rem 1rem 1rem 1.15rem;
     margin-left: -1.15rem;
     margin-right: -1rem;
-  }
-
-  .category-grid {
-    grid-template-columns: 1fr;
   }
 
   /* Make project images full-width on small screens for readability */

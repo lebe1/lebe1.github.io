@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leon Beccard</title>
-  <meta name="description" content="Leon Beccard — machine learning and data science in Vienna. Working in the whole field of LLM generation including retrieval-augmented generation, NLP and the infrastructure around them.">
-  <link rel="canonical" href="https://lebe1.github.io/">
+  <title>Leon Beccard — Data Science & LLM Engineering</title>
+  <meta name="description" content="Leon Beccard — data scientist in Vienna, working on retrieval-augmented generation, LLM evaluation and the infrastructure these systems run on.">
+  <link rel="canonical" href="https://leonbeccard.com/">
   <link rel="icon" href="/images/profile_picture/favicon.png" type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Leon Beccard — Data Science & LLM Engineering">
+  <meta property="og:description" content="Leon Beccard — data scientist in Vienna, working on retrieval-augmented generation, LLM evaluation and the infrastructure these systems run on.">
+  <meta property="og:url" content="https://leonbeccard.com/">
+  <meta property="og:image" content="https://leonbeccard.com/images/profile_picture/avatar.jpg">
+  <meta property="og:image:alt" content="Portrait of Leon Beccard">
+  <meta name="twitter:card" content="summary">
   <link rel="preload" href="/assets/fonts/fraunces-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/fonts.css">
@@ -20,11 +28,10 @@
         <h1 class="site-name">Hi, I'm Leon.</h1>
         <div class="avatar-block">
           <img class="avatar" src="/images/profile_picture/avatar.jpg" alt="Portrait of Leon Beccard" width="300" height="300">
-          <p class="photo-credit">Foto: (c) Claudia Poppe</p>
         </div>
       </div>
-      <p>My full name is Leon Beccard and this is my current portfolio of open-source projects. I recently finished my Master of Science in Data Science at TU Wien in Vienna. My thesis focused on reducing hallucinations at the moment they emerge during generation. A fine-tuned detector called LettucePrevent scores each candidate token as it is produced, penalising unsupported outputs before they are ever sampled.</p>
-      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Before my master, I was working as a software engineer and a project manager for two years in between my studies. Everything below is public and the code is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
+      <p>My full name is Leon Beccard and this is my portfolio of open-source projects. I recently finished my Master of Science in Data Science at TU Wien in Vienna. My thesis focused on reducing hallucinations at the moment they emerge during generation. A fine-tuned detector called LettucePrevent scores each candidate token as it is produced, penalising unsupported outputs before they are ever sampled.</p>
+      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Before my master, I worked as a software engineer and project manager for two years between my studies.</p>
       <div class="link-row">
         <a href="https://github.com/lebe1" rel="me noopener" target="_blank">
           <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -56,44 +63,15 @@
 
     <main>
 
-      <section id="categories" class="category-section">
-        <h2 class="section-label">Explore by category</h2>
-        <div class="category-grid">
-          <a class="category-card" href="#projects">
-            <span class="category-card__eyebrow">Featured</span>
-            <h3 class="category-card__title">Favourite projects</h3>
-            <p class="category-card__description">A curated selection of my work.</p>
-            <span class="category-card__link">View projects</span>
-          </a>
-          <a class="category-card" href="/data-science/">
-            <span class="category-card__eyebrow">Research</span>
-            <h3 class="category-card__title">Data science projects</h3>
-            <p class="category-card__description">Applied machine learning, NLP, retrieval and evaluation work.</p>
-            <span class="category-card__link">Open section</span>
-          </a>
-          <a class="category-card" href="/professional-open-source/">
-            <span class="category-card__eyebrow">Engineering</span>
-            <h3 class="category-card__title">Professional open-source projects</h3>
-            <p class="category-card__description">Software engineering and infrastructure work shared in public.</p>
-            <span class="category-card__link">Open section</span>
-          </a>
-          <a class="category-card" href="/fun-projects/">
-            <span class="category-card__eyebrow">Playful</span>
-            <h3 class="category-card__title">Fun projects</h3>
-            <p class="category-card__description">Smaller experiments, prototypes and personal side projects.</p>
-            <span class="category-card__link">Open section</span>
-          </a>
-        </div>
-      </section>
-
       <section id="projects">
         <h2 class="section-label">Favourite projects</h2>
+        <p class="section-intro">This is simply my own selection of highlighted projects — not a complete list of my work. Everything else is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
 
         <article class="project-card">
           <span class="project-title">LettucePrevent</span>
           <span class="project-context">Master's thesis · TU Wien</span>
-          <img class="project-image" src="/images/favourite_projects/LettucePrevent.png" alt="LettucePrevent project illustration" loading="lazy">
-          <p class="project-desc">LettucePrevent is a real-time hallucination detector that sits inside the autoregressive decoding loop and penalises unsupported tokens before they are sampled. The approach is designed for retrieval-augmented generation, where grounding context can be used to reject unsupported claims as they appear. The number detector performs especially well and reduces numeric hallucinations substantially with limited overhead. The factual detector is more experimental and depends strongly on tokenizer alignment and latency trade-offs. Overall, the work shows a promising route towards more reliable language generation, but it still has clear limitations.</p>
+          <img class="project-image" src="/images/favourite_projects/LettucePrevent.png" alt="Cartoon lettuce dressed as a bouncer, turning guests away at the door of the Generation Party" width="447" height="558">
+          <p class="project-desc">The project I spent the most time on. The detector sits inside the autoregressive decoding loop and scores every candidate token against the retrieved context, so an unsupported claim is penalised before it is ever sampled instead of being caught after the fact. The number detector works well and cuts numeric hallucinations substantially at limited overhead. The factual detector is far more experimental and stands or falls with tokenizer alignment and the latency you are willing to spend. I find the direction promising, but its limitations are real and worth naming.</p>
           <ul class="project-tags">
             <li>Python</li>
             <li>PyTorch</li>
@@ -112,7 +90,8 @@
         <article class="project-card">
           <span class="project-title">Augustina</span>
           <span class="project-context">Digitalising street newspaper sales · Convive</span>
-          <img class="project-image" src="/images/favourite_projects/Augustin_bargeldlos.jpg" alt="Augustina project illustration" loading="lazy">
+          <img class="project-image" src="/images/favourite_projects/Augustin_bargeldlos.jpg" alt="A customer holding up a phone showing the Augustin payment screen while buying a newspaper on the street" width="341" height="512" loading="lazy">
+          <p class="photo-credit">Photo: © Claudia Poppe</p>
           <p class="project-desc">This was one of the most meaningful projects I helped turn from a hackathon idea into a funded product. We digitalised how street newspapers were sold by enabling vendors to accept digital payments through QR codes, removing the need for a bank account or a mobile phone. I led the project as a project manager and built the backend architecture by implementing the REST API and the security layer for the payments. The project combined product thinking, systems design and practical delivery in a way that had a real public impact.</p>
           <ul class="project-tags">
             <li>Go</li>
@@ -126,30 +105,65 @@
             <a class="project-link" href="https://github.com/augustin-wien/augustina-frontend" rel="noopener" target="_blank">GitHub Frontend Repository</a>
           </div>
           <div class="project-press">
-            <h4 class="project-press__title">Incomplete press review</h4>
+            <h3 class="project-press__title">Incomplete press review</h3>
             <ul class="press-list">
-              <a class="project-link" href="https://augustin.or.at/mit-bargeld-oder-karte/" rel="noopener" target="_blank">Augustin</a>
-              <a class="project-link" href="https://www.derstandard.at/story/3000000189654/augustin-wu-die-polizei-schikaniert-die-verkaeufer" rel="noopener" target="_blank">Der Standard</a> 
-              <a class="project-link" href="https://wien.orf.at/stories/3203484/" rel="noopener" target="_blank">ORF Wien</a> 
-              <a class="project-link" href="https://www.ndr.de/nachrichten/hamburg/Strassenmagazin-HinzKunzt-nun-auch-bargeldlos-erhaeltlich,hinzundkuntzdigital102.html" rel="noopener" target="_blank">NDR</a> 
-              <a class="project-link" href="https://taz.de/Strassenzeitung-ermoeglicht-Handyzahlung/!6071944/" rel="noopener" target="_blank">taz</a>
-              <a class="project-link" href="https://www.zeit.de/news/2025-05/18/bargeldloses-zahlen-fuer-strassenmagazin-kommt-gut-an" rel="noopener" target="_blank">Die Zeit</a>
-              <a class="project-link" href="https://www.zdfheute.de/panorama/obdachlos-strassenzeitung-bargeldlos-100.html" rel="noopener" target="_blank">ZDF</a> 
-              <a class="project-link" href="https://20er.at/kein-bargeld-kein-problem/" rel="noopener" target="_blank">20er</a>
-              <a class="project-link" href="https://www.tt.com/artikel/30897323/tiroler-strassenzeitung-20er-kann-nun-auch-bargeldlos-gekauft-werden" rel="noopener" target="_blank">Tiroler Tageszeitung</a> 
-              <a class="project-link" href="https://www.nachrichten.at/oberoesterreich/uebers-handy-die-kupfermuckn-bald-bargeldlos-zu-kaufen;art4,3989029" rel="noopener" target="_blank">Nachrichten.at</a> 
-              <a class="project-link" href="https://volksblatt.at/chronik/regionales/strassenzeitung-kupfermuckn-kann-auch-bargeldlos-gekauft-werden-1562113/" rel="noopener" target="_blank">Volksblatt</a> 
+              <li><a class="project-link" href="https://augustin.or.at/mit-bargeld-oder-karte/" rel="noopener" target="_blank">Augustin</a></li>
+              <li><a class="project-link" href="https://www.derstandard.at/story/3000000189654/augustin-wu-die-polizei-schikaniert-die-verkaeufer" rel="noopener" target="_blank">Der Standard</a></li>
+              <li><a class="project-link" href="https://wien.orf.at/stories/3203484/" rel="noopener" target="_blank">ORF Wien</a></li>
+              <li><a class="project-link" href="https://www.ndr.de/nachrichten/hamburg/Strassenmagazin-HinzKunzt-nun-auch-bargeldlos-erhaeltlich,hinzundkuntzdigital102.html" rel="noopener" target="_blank">NDR</a></li>
+              <li><a class="project-link" href="https://taz.de/Strassenzeitung-ermoeglicht-Handyzahlung/!6071944/" rel="noopener" target="_blank">taz</a></li>
+              <li><a class="project-link" href="https://www.zeit.de/news/2025-05/18/bargeldloses-zahlen-fuer-strassenmagazin-kommt-gut-an" rel="noopener" target="_blank">Die Zeit</a></li>
+              <li><a class="project-link" href="https://www.zdfheute.de/panorama/obdachlos-strassenzeitung-bargeldlos-100.html" rel="noopener" target="_blank">ZDF</a></li>
+              <li><a class="project-link" href="https://20er.at/kein-bargeld-kein-problem/" rel="noopener" target="_blank">20er</a></li>
+              <li><a class="project-link" href="https://www.tt.com/artikel/30897323/tiroler-strassenzeitung-20er-kann-nun-auch-bargeldlos-gekauft-werden" rel="noopener" target="_blank">Tiroler Tageszeitung</a></li>
+              <li><a class="project-link" href="https://www.nachrichten.at/oberoesterreich/uebers-handy-die-kupfermuckn-bald-bargeldlos-zu-kaufen;art4,3989029" rel="noopener" target="_blank">Nachrichten.at</a></li>
+              <li><a class="project-link" href="https://volksblatt.at/chronik/regionales/strassenzeitung-kupfermuckn-kann-auch-bargeldlos-gekauft-werden-1562113/" rel="noopener" target="_blank">Volksblatt</a></li>
             </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">Simple Scientific RAG</span>
+          <span class="project-context">Retrieval over a legal corpus</span>
+          <img class="project-image" src="/images/favourite_projects/vienna_logo.png" alt="Logo of the City of Vienna, whose building regulations formed the corpus" width="1070" height="604" loading="lazy">
+          <p class="project-desc">This was the interdisciplinary project of my Data Science master, where the point is to work with a faculty outside computer science. I chose the juridical faculty and built a retrieval system over the Viennese building regulations with a fellow student. The corpus was far too specific for any general purpose model (at the time). The answers had to be in German and everything had to run locally, without LLM providers or frameworks like LangChain. Therefore, we implemented chunking, retrieval and reranking ourselves around Elasticsearch and Ollama. What fascinated me most was how much more the chunking strategy mattered than the embedding model and that a simple keyword-based evaluation revealed a non-deterministic behaviour in our experiments. This project is a good part of why I kept working on retrieval ever since.</p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>Elasticsearch</li>
+            <li>Ollama</li>
+            <li>Docker</li>
+            <li>RAG</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/simple-scientific-RAG" rel="noopener" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-title">Kubernetes on Google Cloud</span>
+          <span class="project-context">Cloud infrastructure project</span>
+          <img class="project-image" src="/images/favourite_projects/kubernetes.svg" alt="The Kubernetes ship's wheel logo" width="723" height="702" loading="lazy">
+          <p class="project-desc">Together with a fellow student I deployed a demo shop split into eleven microservices on Google Kubernetes Engine and then pushed it until it broke. We automated the load generator with Terraform and Ansible, watched the cluster through Prometheus and Grafana and saw the frontend and the currency service give out at around a thousand concurrent users. Rebuilding the same setup with K3s afterwards showed how much of Kubernetes a managed service quietly hides from you. It is a field I would love to spend much more time in.</p>
+          <ul class="project-tags">
+            <li>Kubernetes</li>
+            <li>Terraform</li>
+            <li>Ansible</li>
+            <li>Prometheus</li>
+            <li>Google Cloud</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/lebe1/Kubernetes-project" rel="noopener" target="_blank">GitHub</a>
           </div>
         </article>
 
         <article class="project-card">
           <span class="project-title">Street dinners</span>
           <span class="project-context">Organising dinners for a more vibrant neighbourhood · Vienna</span>
-          <img class="project-image" src="/images/favourite_projects/strassenfest.jpeg" alt="Street dinners project illustration" width="1200" height="1600" loading="lazy">          
+          <img class="project-image" src="/images/favourite_projects/strassenfest.jpeg" alt="Neighbours sitting at tables and on blankets along a car-free Viennese street on a summer evening" width="760" height="1013" loading="lazy">
           <p class="project-desc">This is one of my favourite personal projects because it started as a simple idea and grew into a small civic movement. We began by inviting neighbours to share dinner on the street and quickly realised that the experience could strengthen community life in a very tangible way. From that idea, a petition was launched to close a short stretch of road to cars, gathering more than 500 signatures and creating momentum around a safer, more welcoming public space. The outcome of the petition is still open. The project continues to bring people together and might even lead to a community yard at the very same place.</p>
           <div class="project-links">
-          <a class="project-link" href="https://petitionen.wien.gv.at/petition/online/PetitionDetail.aspx?PetID=0577fece7ab44c6b9798eee372005eda" rel="noopener" target="_blank">Petition</a>
+            <a class="project-link" href="https://petitionen.wien.gv.at/petition/online/PetitionDetail.aspx?PetID=0577fece7ab44c6b9798eee372005eda" rel="noopener" target="_blank">Petition</a>
           </div>
         </article>
 
@@ -158,7 +172,7 @@
 
       <section id="contact">
         <h2 class="section-label">Get in touch</h2>
-        <p class="project-desc">Happy to receive any requests via <a href="https://www.linkedin.com/in/leon-beccard/" rel="noopener" target="_blank">LinkedIn</a>.</p>
+        <p class="section-intro">Happy to receive any requests via <a href="https://www.linkedin.com/in/leon-beccard/" rel="noopener" target="_blank">LinkedIn</a>.</p>
       </section>
 
     </main>
