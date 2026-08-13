@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leon Beccard — Data Science & LLM Engineering</title>
-  <meta name="description" content="Leon Beccard — data scientist in Vienna, working on retrieval-augmented generation, LLM evaluation and the infrastructure these systems run on.">
+  <title>Leon Beccard - Data Science & LLM Engineering</title>
+  <meta name="description" content="Leon Beccard - data scientist in Vienna, working on retrieval-augmented generation, LLM evaluation and the infrastructure these systems run on. Currently looking for a role in LLM and machine learning engineering.">
   <link rel="canonical" href="https://leonbeccard.com/">
   <link rel="icon" href="/images/profile_picture/favicon.png" type="image/png">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Leon Beccard — Data Science & LLM Engineering">
-  <meta property="og:description" content="Leon Beccard — data scientist in Vienna, working on retrieval-augmented generation, LLM evaluation and the infrastructure these systems run on.">
+  <meta property="og:title" content="Leon Beccard - Data Science & LLM Engineering">
+  <meta property="og:description" content="Leon Beccard - data scientist in Vienna, working on retrieval-augmented generation, LLM evaluation and the infrastructure these systems run on. Currently looking for a role in LLM and machine learning engineering.">
   <meta property="og:url" content="https://leonbeccard.com/">
   <meta property="og:image" content="https://leonbeccard.com/images/profile_picture/avatar.jpg">
   <meta property="og:image:alt" content="Portrait of Leon Beccard">
@@ -31,7 +31,9 @@
         </div>
       </div>
       <p>My full name is Leon Beccard and this is my portfolio of open-source projects. I recently finished my Master of Science in Data Science at TU Wien in Vienna. My thesis focused on reducing hallucinations at the moment they emerge during generation. A fine-tuned detector called LettucePrevent scores each candidate token as it is produced, penalising unsupported outputs before they are ever sampled.</p>
-      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Before my master, I worked as a software engineer and project manager for two years between my studies.</p>
+      <p>Alongside the models themselves I build the parts these systems actually need, things like retrieval pipelines, containerised services and clusters that can be torn down and rebuilt from scratch. Before my master, I worked as a software engineer and project manager for two years between my studies, most visibly on <a href="#augustina">Augustina</a>, a payment system for street newspaper vendors that was covered by Die Zeit, ZDF and ORF.</p>
+      <p>What I enjoy most about this field is following an idea the whole way, from a first proof of concept to a minimum viable product and finally to something stable enough to run in production.</p>
+
       <div class="link-row">
         <a href="https://github.com/lebe1" rel="me noopener" target="_blank">
           <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -58,6 +60,22 @@
           </svg>
           LinkedIn
         </a>
+        <a href="mailto:l.beccard@proton.me">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2"/>
+            <path d="m3 6 9 6.5L21 6"/>
+          </svg>
+          Email
+        </a>
+        <a href="/assets/Leon-Beccard-CV.pdf">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/>
+            <path d="M14 3v5h5"/>
+            <path d="M12 11v6"/>
+            <path d="m9.5 14.5 2.5 2.5 2.5-2.5"/>
+          </svg>
+          CV
+        </a>
       </div>
     </header>
 
@@ -65,13 +83,13 @@
 
       <section id="projects">
         <h2 class="section-label">Favourite projects</h2>
-        <p class="section-intro">This is simply my own selection of highlighted projects — not a complete list of my work. Everything else is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
+        <p class="section-intro">This is simply my own selection of highlighted projects - not a complete list of my work. Any other open-source project is on <a href="https://github.com/lebe1" rel="noopener" target="_blank">GitHub</a>.</p>
 
         <article class="project-card">
           <span class="project-title">LettucePrevent</span>
-          <span class="project-context">Master's thesis · TU Wien</span>
+          <span class="project-context">Master's thesis · TU Wien · 2026</span>
           <img class="project-image" src="/images/favourite_projects/LettucePrevent.png" alt="Cartoon lettuce dressed as a bouncer, turning guests away at the door of the Generation Party" width="447" height="558">
-          <p class="project-desc">The project I spent the most time on. The detector sits inside the autoregressive decoding loop and scores every candidate token against the retrieved context, so an unsupported claim is penalised before it is ever sampled instead of being caught after the fact. The number detector works well and cuts numeric hallucinations substantially at limited overhead. The factual detector is far more experimental and stands or falls with tokenizer alignment and the latency you are willing to spend. I find the direction promising, but its limitations are real and worth naming.</p>
+          <p class="project-desc">The research project I spent the most time on. The detector sits inside the autoregressive decoding loop and scores every candidate token against the retrieved context, so an unsupported claim is penalised before it is ever sampled instead of being caught after the fact. The number detector works well and cuts numeric hallucinations substantially at limited overhead. The factual detector is far more experimental and stands or falls with tokenizer alignment and the latency you are willing to spend. I find the direction promising, but its limitations are real and worth naming.</p>
           <ul class="project-tags">
             <li>Python</li>
             <li>PyTorch</li>
@@ -87,9 +105,9 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" id="augustina">
           <span class="project-title">Augustina</span>
-          <span class="project-context">Digitalising street newspaper sales · Convive</span>
+          <span class="project-context">Digitalising street newspaper sales · Convive · 2023</span>
           <img class="project-image" src="/images/favourite_projects/Augustin_bargeldlos.jpg" alt="A customer holding up a phone showing the Augustin payment screen while buying a newspaper on the street" width="341" height="512" loading="lazy">
           <p class="photo-credit">Photo: © Claudia Poppe</p>
           <p class="project-desc">This was one of the most meaningful projects I helped turn from a hackathon idea into a funded product. We digitalised how street newspapers were sold by enabling vendors to accept digital payments through QR codes, removing the need for a bank account or a mobile phone. I led the project as a project manager and built the backend architecture by implementing the REST API and the security layer for the payments. The project combined product thinking, systems design and practical delivery in a way that had a real public impact.</p>
@@ -105,11 +123,11 @@
             <a class="project-link" href="https://github.com/augustin-wien/augustina-frontend" rel="noopener" target="_blank">GitHub Frontend Repository</a>
           </div>
           <div class="project-press">
-            <h3 class="project-press__title">Incomplete press review</h3>
+            <h3 class="project-press__title">Selected press</h3>
             <ul class="press-list">
               <li><a class="project-link" href="https://augustin.or.at/mit-bargeld-oder-karte/" rel="noopener" target="_blank">Augustin</a></li>
               <li><a class="project-link" href="https://www.derstandard.at/story/3000000189654/augustin-wu-die-polizei-schikaniert-die-verkaeufer" rel="noopener" target="_blank">Der Standard</a></li>
-              <li><a class="project-link" href="https://wien.orf.at/stories/3203484/" rel="noopener" target="_blank">ORF Wien</a></li>
+              <li><a class="project-link" href="https://wien.orf.at/stories/3203484/" rel="noopener" target="_blank">ORF</a></li>
               <li><a class="project-link" href="https://www.ndr.de/nachrichten/hamburg/Strassenmagazin-HinzKunzt-nun-auch-bargeldlos-erhaeltlich,hinzundkuntzdigital102.html" rel="noopener" target="_blank">NDR</a></li>
               <li><a class="project-link" href="https://taz.de/Strassenzeitung-ermoeglicht-Handyzahlung/!6071944/" rel="noopener" target="_blank">taz</a></li>
               <li><a class="project-link" href="https://www.zeit.de/news/2025-05/18/bargeldloses-zahlen-fuer-strassenmagazin-kommt-gut-an" rel="noopener" target="_blank">Die Zeit</a></li>
@@ -124,9 +142,9 @@
 
         <article class="project-card">
           <span class="project-title">Simple Scientific RAG</span>
-          <span class="project-context">Retrieval over a legal corpus</span>
+          <span class="project-context">Retrieval over a legal corpus · TU Wien · 2025</span>
           <img class="project-image" src="/images/favourite_projects/vienna_logo.png" alt="Logo of the City of Vienna, whose building regulations formed the corpus" width="1070" height="604" loading="lazy">
-          <p class="project-desc">This was the interdisciplinary project of my Data Science master, where the point is to work with a faculty outside computer science. I chose the juridical faculty and built a retrieval system over the Viennese building regulations with a fellow student. The corpus was far too specific for any general purpose model (at the time). The answers had to be in German and everything had to run locally, without LLM providers or frameworks like LangChain. Therefore, we implemented chunking, retrieval and reranking ourselves around Elasticsearch and Ollama. What fascinated me most was how much more the chunking strategy mattered than the embedding model and that a simple keyword-based evaluation revealed a non-deterministic behaviour in our experiments. This project is a good part of why I kept working on retrieval ever since.</p>
+          <p class="project-desc">This was the interdisciplinary project of my Data Science master, where the point is to work with a faculty outside computer science. I chose the juridical faculty and built a retrieval system over the Viennese building regulations with a fellow student. The corpus was far too specific for any general purpose model (at the time). The answers had to be in German and everything had to run locally, without LLM providers or frameworks like LangChain. Therefore, we implemented chunking, retrieval and reranking ourselves around Elasticsearch and Ollama. What shocked me most wasn't the finding of the higher importance of the chunking strategy over the embedding model but that a simple keyword-based evaluation revealed a non-deterministic behaviour in our retrieval pipeline.</p>
           <ul class="project-tags">
             <li>Python</li>
             <li>FastAPI</li>
@@ -142,9 +160,9 @@
 
         <article class="project-card">
           <span class="project-title">Kubernetes on Google Cloud</span>
-          <span class="project-context">Cloud infrastructure project</span>
+          <span class="project-context">Cloud infrastructure project · Grenoble INP · 2026</span>
           <img class="project-image" src="/images/favourite_projects/kubernetes.svg" alt="The Kubernetes ship's wheel logo" width="723" height="702" loading="lazy">
-          <p class="project-desc">Together with a fellow student I deployed a demo shop split into eleven microservices on Google Kubernetes Engine and then pushed it until it broke. We automated the load generator with Terraform and Ansible, watched the cluster through Prometheus and Grafana and saw the frontend and the currency service give out at around a thousand concurrent users. Rebuilding the same setup with K3s afterwards showed how much of Kubernetes a managed service quietly hides from you. It is a field I would love to spend much more time in.</p>
+          <p class="project-desc">Together with a fellow student I deployed a demo shop split into eleven microservices on Google Kubernetes Engine and then pushed it until it broke. We automated the load generator with Terraform and Ansible, watched the cluster through Prometheus and Grafana and saw the frontend and the currency service give out at around a thousand concurrent users. Rebuilding the same setup with K3s afterwards showed how much of Kubernetes a managed service quietly hides from you.</p>
           <ul class="project-tags">
             <li>Kubernetes</li>
             <li>Terraform</li>
@@ -159,9 +177,9 @@
 
         <article class="project-card">
           <span class="project-title">Street dinners</span>
-          <span class="project-context">Organising dinners for a more vibrant neighbourhood · Vienna</span>
+          <span class="project-context">Organising dinners for a more vibrant neighbourhood · Vienna · 2025</span>
           <img class="project-image" src="/images/favourite_projects/strassenfest.jpeg" alt="Neighbours sitting at tables and on blankets along a car-free Viennese street on a summer evening" width="760" height="1013" loading="lazy">
-          <p class="project-desc">This is one of my favourite personal projects because it started as a simple idea and grew into a small civic movement. We began by inviting neighbours to share dinner on the street and quickly realised that the experience could strengthen community life in a very tangible way. From that idea, a petition was launched to close a short stretch of road to cars, gathering more than 500 signatures and creating momentum around a safer, more welcoming public space. The outcome of the petition is still open. The project continues to bring people together and might even lead to a community yard at the very same place.</p>
+          <p class="project-desc">More than 500 signatures on a petition to close a short stretch of road to cars to create a vivid place for the neighborhood and for the elementary school next to it. It started as a simple idea by inviting neighbours to share dinner on the street in summer 2025. One year later it grew into a small civic movement once we realised how tangibly the experience strengthened community life. The outcome of the petition is still open but the initiative continues to bring people together and might even lead to a community yard at the very same place. This is one of my favourite personal projects.</p>
           <div class="project-links">
             <a class="project-link" href="https://petitionen.wien.gv.at/petition/online/PetitionDetail.aspx?PetID=0577fece7ab44c6b9798eee372005eda" rel="noopener" target="_blank">Petition</a>
           </div>
@@ -172,7 +190,13 @@
 
       <section id="contact">
         <h2 class="section-label">Get in touch</h2>
-        <p class="section-intro">Happy to receive any requests via <a href="https://www.linkedin.com/in/leon-beccard/" rel="noopener" target="_blank">LinkedIn</a>.</p>
+        <p class="section-intro">The most reliable way to reach me is email - <a href="mailto:l.beccard@proton.me">l.beccard@proton.me</a>.</p>
+        <p class="section-intro">I'm also on <a href="https://www.linkedin.com/in/leon-beccard/" rel="noopener" target="_blank">LinkedIn</a> and my full CV is available as a PDF.</p>
+        <div class="project-links">
+          <a class="project-link" href="mailto:l.beccard@proton.me">Email me</a>
+          <a class="project-link" href="/assets/Leon-Beccard-CV.pdf" download>Download CV (PDF)</a>
+          <a class="project-link" href="https://www.linkedin.com/in/leon-beccard/" rel="me noopener" target="_blank">LinkedIn</a>
+        </div>
       </section>
 
     </main>

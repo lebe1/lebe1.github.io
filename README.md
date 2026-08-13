@@ -2,8 +2,7 @@
 
 My personal portfolio at **[leonbeccard.com](https://leonbeccard.com/)**.
 
-Plain static HTML and CSS — no Jekyll, no build step, no dependencies. What is in this
-repository is exactly what gets served.
+Plain static HTML and CSS - no Jekyll, no build step, no dependencies. What is in this repository is exactly what gets served.
 
 
 ## Local preview
@@ -18,12 +17,20 @@ Then open <http://localhost:8000>
 
 Content lives directly in `index.html`. A project is one `<article class="project-card">`:
 title, context line, an optional `<img class="project-image">`, description, optional
-`<ul class="project-tags">`, and a row of `<a class="project-link">` buttons. Cards with press
+`<ul class="project-tags">` and a row of `<a class="project-link">` buttons. Cards with press
 coverage add a `<div class="project-press">` holding a `<ul class="press-list">` of the same
 buttons. Entries still needing copy use `<p class="project-todo">`, which renders as visibly
 unfinished italic text instead of leaving a silent gap.
 
-Every `<img>` carries its real `width` and `height` so nothing shifts while the page loads, and
+The stack summary in the intro is a `<dl class="stack">` of `<div class="stack-row">` label/value
+pairs. It is deliberately plain text rather than chips so it stays readable, copyable and findable
+by keyword search.
+
+The CV lives at `assets/Leon-Beccard-CV.pdf`. The intro link row and the "Get in touch" section
+both point at it; replacing it means overwriting that exact path, since the filename is what
+lands in the visitor's downloads folder.
+
+Every `<img>` carries its real `width` and `height` so nothing shifts while the page loads and
 descriptive `alt` text. Images are stored at roughly twice their display size (the CSS caps them
 at 380px) and no larger.
 

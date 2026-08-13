@@ -148,6 +148,35 @@ a:focus-visible {
   border-bottom-color: var(--accent);
 }
 
+/* === Stack summary ===
+   Plain text, not chips: it has to stay readable and copyable for anyone
+   skimming for keywords. Label column is fixed so the values line up. */
+.stack {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.stack-row {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.3rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.stack-row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.stack dt {
+  flex: 0 0 8.5rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.stack dd {
+  color: var(--text);
+}
+
 /* === Inline link row (GitHub, email, …) === */
 .link-row {
   display: flex;
@@ -402,6 +431,17 @@ section {
     padding: 1rem 1rem 1rem 1.15rem;
     margin-left: -1.15rem;
     margin-right: -1rem;
+  }
+
+  /* Two columns don't fit at this width; label above its values instead. */
+  .stack-row {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.45rem 0;
+  }
+
+  .stack dt {
+    flex: none;
   }
 
   /* Make project images full-width on small screens for readability */
